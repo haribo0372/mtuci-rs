@@ -1,22 +1,21 @@
-struct Point<T> {
-    x: T,
-    y: T,
-}
+#[derive(Debug)]
 
-impl<T> Point<T> {
-    fn x(&self) -> &T {
-        &self.x
-    }
+struct Point<X1, Y1>{
+    x : X1,
+    y : Y1
 }
-
-impl Point<f32> {
-    fn distance_from_origin(&self) -> f32 {
-        (self.x.powi(2) + self.y.powi(2)).sqrt()
+impl <X1, Y1> Point<X1, Y1>{
+    fn mix<X2, Y2>(self, other: Point<X2, Y2>) -> Point<X1, Y2>{
+        Point{
+            x : self.x,
+            y : other.y
+        }
     }
 }
 
 fn main() {
-    let p = Point { x: 5, y: 10 };
-
-    println!("p.x = {}", p.x());
+    let a = Point{x: 1, y: 2.0};
+    let b = Point{x: "foma", y: 'g'};
+    let mix = a.mix(b);
+    println!("{:#?}", mix)
 }
