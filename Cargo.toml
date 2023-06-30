@@ -3,4 +3,5 @@ members = [
     "dicriminant",
     "triangles",
     "sample",
+    "para1_dz"
 ]
