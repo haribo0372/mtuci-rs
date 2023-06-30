@@ -14,7 +14,7 @@ fn main() {
 
 
 
-// ИГРА УГАДАЙКА
+// ИГРА УГАДАЙКА (описать зависимость  RAND в Cargo.toml )
 // use rand::Rng;
 // use std::cmp::Ordering;
 // use std::io;
