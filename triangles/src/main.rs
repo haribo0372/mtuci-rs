@@ -9,6 +9,7 @@ impl Jo{
     fn area(&self) -> f32{
         self.h * self.a * self.b
     }
+
 }
 
 
