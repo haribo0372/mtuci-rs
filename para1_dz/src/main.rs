@@ -1,14 +1,20 @@
 fn main() {
     for i in 1..101{
-        if i % 3 == 0{
-            if i % 15 == 0{println!("FizzBazz")}
-            else{println!("Fizz")}
-        } else if i % 5 == 0{
-            if i % 15 == 0{println!("FizzBazz")}
-            else{println!("Bazz")}
-        } else{
-            println!("{i}")
+        match (i%3, i%5) {
+            (0, 0) => println!("FizzBazz"),
+            (_, 0) => println!("Bazz"),
+            (0, _) => println!("Fizz"),
+            (_, _) => println!("{i}")
         }
+        // if i % 3 == 0{
+        //     if i % 15 == 0{println!("FizzBazz")}
+        //     else{println!("Fizz")}
+        // } else if i % 5 == 0{
+        //     if i % 15 == 0{println!("FizzBazz")}
+        //     else{println!("Bazz")}
+        // } else{
+        //     println!("{i}")
+        // }
     }
 }
 
