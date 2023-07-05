@@ -10,7 +10,7 @@
  */
 
 fn main() {
-    let mut r = Rect::new((1., 2.), 5.);
+    let r = Rect::new((1., 2.), 5.);
     println!("Rectangle : {:#?}
     bottom right : {:?}
     area : {}

@@ -15,13 +15,13 @@ fn main() {
     println!("{:?}", find_term(SEARCH_TERM, QUOTE))
 }
 
-fn find_term(search_term: &str, mut quote: &str)  -> String{
+fn find_term(search_term: &str, quote: &str)  -> String{
     let mut vec = Vec::new();
     let mut quote_string = quote.clone().to_string();
     let mut rowww = "".to_string();
     let mut s = String::new();
     if quote_string.chars().last().unwrap() != '\n'{ quote_string.push_str("\n")}
-    for mut i in 0..quote_string.len() {
+    for i in 0..quote_string.len() {
         if &quote_string[i..i + 1] == "\n" {
             vec.push(s.clone());
             if s.clone().contains(search_term) {
