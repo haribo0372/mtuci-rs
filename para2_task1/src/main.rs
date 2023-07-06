@@ -5,6 +5,8 @@
 номер строки: строка...
 
  */
+use std::str::Split;
+
 const SEARCH_TERM: &str = "picture";
 const QUOTE: &str = "Every face, every shop, bedroom window, public-house, and
 dark square is a picture feverishly turned--in search of what?
@@ -15,22 +17,18 @@ fn main() {
     println!("{:?}", find_term(SEARCH_TERM, QUOTE))
 }
 
-fn find_term(search_term: &str, quote: &str)  -> String{
+fn find_term(search_term: &str, quote: &str) -> String{
     let mut vec = Vec::new();
-    let mut quote_string = quote.clone().to_string();
-    let mut rowww = "".to_string();
-    let mut s = String::new();
-    if quote_string.chars().last().unwrap() != '\n'{ quote_string.push_str("\n")}
-    for i in 0..quote_string.len() {
-        if &quote_string[i..i + 1] == "\n" {
-            vec.push(s.clone());
-            if s.clone().contains(search_term) {
-                rowww = s.clone()
-            }
-            s = "".to_string();
-        } else { s.push_str(&quote_string[i..i + 1]) }
+    let mut index = 0;
+    let mut str = "".to_string();
+    for row in quote.split('\n'){
+        vec.push(row);
+        if row.contains(search_term){
+            str = row.clone().to_string()
+        }
     }
-    return format!("{}: {}", vec.iter().position(|r| r == &rowww).unwrap() + 1, rowww)
+    return format!("{}: {}", vec.iter().position(|r| r == &str).unwrap() + 1, str)
+
 }
 
 
