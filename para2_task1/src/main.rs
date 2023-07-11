@@ -17,16 +17,16 @@ fn main() {
 }
 
 fn find_term(search_term: &str, quote: &str) -> String{
-    let mut vec = Vec::new();
-    let mut index = 0;
-    let mut str = "".to_string();
-    for row in quote.split('\n'){
-        vec.push(row);
-        if row.contains(search_term){
-            str = row.clone().to_string()
-        }
-    }
-    return format!("{}: {}", vec.iter().position(|r| r == &str).unwrap() + 1, str)
+    // let mut vec = Vec::new();
+    // let mut index = 0;
+    // let mut str = "".to_string();
+    // for row in quote.split('\n'){
+    //     vec.push(row);
+    //     if row.contains(search_term){
+    //         str = row.clone().to_string()
+    //     }
+    // }
+    // return format!("{}: {}", vec.iter().position(|r| r == &str).unwrap() + 1, str)
 
 }
 
