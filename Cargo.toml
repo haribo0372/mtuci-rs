@@ -7,4 +7,5 @@ members = [
     "para2_task1",
     "para2_task2",
     "vector_dz4",
+    "hashmap_dz4",
 ]
